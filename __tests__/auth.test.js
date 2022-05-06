@@ -3,7 +3,7 @@
 const bearerMiddleware = require('../src/auth/middleware/bearer.js');
 const aclMiddleware = require('../src/auth/middleware/acl');
 
-describe('auth tests', () => {
+describe('Auth Middleware tests', () => {
 
   test('Bearer middleware authenticates token on request', () => {
     let req = {
