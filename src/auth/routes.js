@@ -4,7 +4,8 @@ const express = require('express');
 const authRouter = express.Router();
 
 const { users } = require('./models');
-const bearerAuth = require('./middleware/bearer.js');
+//const bearerAuth = require('./middleware/bearer.js');
+const basicAuth = require('./middleware/basic.js');
 
 authRouter.post('/signup', async (req, res, next) => {
   try {
@@ -19,7 +20,7 @@ authRouter.post('/signup', async (req, res, next) => {
   }
 });
 
-authRouter.post('/signin', bearerAuth, (req, res, next) => {
+authRouter.post('/signin', basicAuth, (req, res, next) => {
   const user = {
     user: req.user,
     token: req.user.token,
